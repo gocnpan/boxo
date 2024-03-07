@@ -127,6 +127,21 @@ func (e *ErrorStatusCode) Unwrap() error {
 	return e.Err
 }
 
+// ErrPartialResponse can be returned from a DataCallback to indicate that some of the requested resource
+// was successfully fetched, and that instead of retrying the full resource, that there are
+// one or more more specific resources that should be fetched (via StillNeed) to complete the request.
+type ErrPartialResponse struct {
+	error
+	StillNeed []string
+}
+
+func (epr ErrPartialResponse) Error() string {
+	if epr.error != nil {
+		return fmt.Sprintf("partial response: %s", epr.error.Error())
+	}
+	return "caboose received a partial response"
+}
+
 func webError(w http.ResponseWriter, r *http.Request, c *Config, err error, defaultCode int) {
 	code := defaultCode
 

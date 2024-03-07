@@ -50,9 +50,7 @@ type GraphGateway struct {
 	baseBackend
 
 	fetcher CarFetcher
-
-	pc traversal.LinkTargetNodePrototypeChooser
-
+	pc      traversal.LinkTargetNodePrototypeChooser
 	metrics *GraphGatewayMetrics
 }
 
@@ -295,7 +293,8 @@ func resolvePathToLastWithRoots(ctx context.Context, fpath path.ImmutablePath, u
 func contentMetadataFromRootsAndRemainder(p path.Path, pathRoots []cid.Cid, terminalCid cid.Cid, remainder []string) ContentPathMetadata {
 	var rootCid cid.Cid
 	if len(pathRoots) > 0 {
-		rootCid = pathRoots[0]
+		rootCid = pathRoots[len(pathRoots)-1]
+		pathRoots = pathRoots[:len(pathRoots)]
 	} else {
 		rootCid = terminalCid
 	}
@@ -808,7 +807,7 @@ func fetchWithPartialRetries[T any](ctx context.Context, p path.ImmutablePath, i
 				p = path.FromCid(req.c)
 				params = req.params
 				remainderUrl := contentPathToCarUrl(p, params).String()
-				return fmt.Errorf("received partial response, still need %s", remainderUrl)
+				return ErrPartialResponse{StillNeed: []string{remainderUrl}}
 			case <-cctx.Done():
 				return cctx.Err()
 			}

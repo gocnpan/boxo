@@ -27,6 +27,8 @@ type proxyBlockstore struct {
 
 var _ blockstore.Blockstore = (*proxyBlockstore)(nil)
 
+var _ CarFetcher = (*proxyBlockstore)(nil)
+
 // NewProxyBlockstore creates a new [blockstore.Blockstore] that is backed by one
 // or more gateways that follow the [Trustless Gateway] specification.
 //
@@ -150,35 +152,33 @@ func (ps *proxyBlockstore) getRandomGatewayURL() string {
 	return ps.gatewayURL[ps.rand.Intn(len(ps.gatewayURL))]
 }
 
-// func (ps *proxyBlockStore) Fetch(ctx context.Context, path string, cb lib.DataCallback) error {
-// 	urlStr := fmt.Sprintf("%s%s", ps.getRandomGatewayURL(), path)
-// 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, urlStr, nil)
-// 	if err != nil {
-// 		return err
-// 	}
-// 	goLog.Debugw("car fetch", "url", req.URL)
-// 	req.Header.Set("Accept", "application/vnd.ipld.car;order=dfs;dups=y")
-// 	resp, err := ps.httpClient.Do(req)
-// 	if err != nil {
-// 		return err
-// 	}
+func (ps *proxyBlockstore) Fetch(ctx context.Context, path string, cb DataCallback) error {
+	urlStr := fmt.Sprintf("%s%s", ps.getRandomGatewayURL(), path)
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, urlStr, nil)
+	if err != nil {
+		return err
+	}
+	log.Debugw("car fetch", "url", req.URL)
+	req.Header.Set("Accept", "application/vnd.ipld.car;order=dfs;dups=y")
+	resp, err := ps.httpClient.Do(req)
+	if err != nil {
+		return err
+	}
 
-// 	if resp.StatusCode != http.StatusOK {
-// 		errData, err := io.ReadAll(resp.Body)
-// 		if err != nil {
-// 			err = fmt.Errorf("could not read error message: %w", err)
-// 		} else {
-// 			err = fmt.Errorf("%q", string(errData))
-// 		}
-// 		return fmt.Errorf("http error from car gateway: %s: %w", resp.Status, err)
-// 	}
+	if resp.StatusCode != http.StatusOK {
+		errData, err := io.ReadAll(resp.Body)
+		if err != nil {
+			err = fmt.Errorf("could not read error message: %w", err)
+		} else {
+			err = fmt.Errorf("%q", string(errData))
+		}
+		return fmt.Errorf("http error from car gateway: %s: %w", resp.Status, err)
+	}
 
-// 	err = cb(path, resp.Body)
-// 	if err != nil {
-// 		resp.Body.Close()
-// 		return err
-// 	}
-// 	return resp.Body.Close()
-// }
-
-// var _ lib.CarFetcher = (*proxyBlockStore)(nil)
+	err = cb(path, resp.Body)
+	if err != nil {
+		resp.Body.Close()
+		return err
+	}
+	return resp.Body.Close()
+}

@@ -27,7 +27,7 @@ var _ blockstore.Blockstore = (*cacheBlockStore)(nil)
 
 // NewCacheBlockStore creates a new [blockstore.Blockstore] that caches blocks
 // in memory using a two queue cache. It can be useful, for example, when paired
-// with a proxy blockstore (see [NewProxyBlockstore]).
+// with a proxy blockstore (see [NewProxyFetcher]).
 func NewCacheBlockStore(size int) (blockstore.Blockstore, error) {
 	c, err := lru.New2Q[string, []byte](size)
 	if err != nil {

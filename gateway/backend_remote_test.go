@@ -156,7 +156,7 @@ func TestTar(t *testing.T) {
 	bs, err := NewProxyBlockstore([]string{s.URL}, NewCachedDNS(dnsCacheRefreshInterval))
 	require.NoError(t, err)
 
-	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs.(CarFetcher), allowedRetries: 3, retriesRemaining: 3})
+	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs, allowedRetries: 3, retriesRemaining: 3})
 	require.NoError(t, err)
 
 	p := path.FromCid(cid.MustParse("bafybeid3fd2xxdcd3dbj7trb433h2aqssn6xovjbwnkargjv7fuog4xjdi"))
@@ -326,7 +326,7 @@ func TestTarAtEndOfPath(t *testing.T) {
 	bs, err := NewProxyBlockstore([]string{s.URL}, NewCachedDNS(dnsCacheRefreshInterval))
 	require.NoError(t, err)
 
-	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs.(CarFetcher), allowedRetries: 3, retriesRemaining: 3})
+	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs, allowedRetries: 3, retriesRemaining: 3})
 	require.NoError(t, err)
 
 	p, err := path.NewPath("/ipfs/bafybeid3fd2xxdcd3dbj7trb433h2aqssn6xovjbwnkargjv7fuog4xjdi/hamtDir")
@@ -488,7 +488,7 @@ func TestGetFile(t *testing.T) {
 
 	bs, err := NewProxyBlockstore([]string{s.URL}, NewCachedDNS(dnsCacheRefreshInterval))
 	require.NoError(t, err)
-	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs.(CarFetcher), allowedRetries: 3, retriesRemaining: 3})
+	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs, allowedRetries: 3, retriesRemaining: 3})
 	require.NoError(t, err)
 
 	trustedGatewayServer := httptest.NewServer(NewHandler(Config{DeserializedResponses: true}, backend))
@@ -589,7 +589,7 @@ func TestGetFileRangeRequest(t *testing.T) {
 
 	bs, err := NewProxyBlockstore([]string{s.URL}, NewCachedDNS(dnsCacheRefreshInterval))
 	require.NoError(t, err)
-	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs.(CarFetcher), allowedRetries: 3, retriesRemaining: 3})
+	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs, allowedRetries: 3, retriesRemaining: 3})
 	require.NoError(t, err)
 
 	trustedGatewayServer := httptest.NewServer(NewHandler(Config{DeserializedResponses: true}, backend))
@@ -697,7 +697,7 @@ func TestGetFileWithBadBlockReturned(t *testing.T) {
 
 	bs, err := NewProxyBlockstore([]string{s.URL}, NewCachedDNS(dnsCacheRefreshInterval))
 	require.NoError(t, err)
-	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs.(CarFetcher), allowedRetries: 3, retriesRemaining: 3})
+	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs, allowedRetries: 3, retriesRemaining: 3})
 	require.NoError(t, err)
 
 	trustedGatewayServer := httptest.NewServer(NewHandler(Config{DeserializedResponses: true}, backend))
@@ -803,7 +803,7 @@ func TestGetHAMTDirectory(t *testing.T) {
 
 	bs, err := NewProxyBlockstore([]string{s.URL}, NewCachedDNS(dnsCacheRefreshInterval))
 	require.NoError(t, err)
-	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs.(CarFetcher), allowedRetries: 3, retriesRemaining: 3})
+	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs, allowedRetries: 3, retriesRemaining: 3})
 	require.NoError(t, err)
 
 	trustedGatewayServer := httptest.NewServer(NewHandler(Config{DeserializedResponses: true}, backend))
@@ -909,7 +909,7 @@ func TestGetCAR(t *testing.T) {
 
 	bs, err := NewProxyBlockstore([]string{s.URL}, NewCachedDNS(dnsCacheRefreshInterval))
 	require.NoError(t, err)
-	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs.(CarFetcher), allowedRetries: 3, retriesRemaining: 3})
+	backend, err := NewGraphGatewayBackend(&retryFetcher{inner: bs, allowedRetries: 3, retriesRemaining: 3})
 	require.NoError(t, err)
 
 	p := path.FromCid(cid.MustParse("bafybeid3fd2xxdcd3dbj7trb433h2aqssn6xovjbwnkargjv7fuog4xjdi"))
@@ -1025,7 +1025,7 @@ func TestPassthroughErrors(t *testing.T) {
 					if clientRequestNum > 2 {
 						return bogusErr
 					}
-					return bs.(CarFetcher).Fetch(ctx, path, cb)
+					return bs.Fetch(ctx, path, cb)
 				}},
 				allowedRetries: 3, retriesRemaining: 3})
 			if err != nil {

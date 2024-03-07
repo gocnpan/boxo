@@ -33,7 +33,7 @@ var _ CarFetcher = (*proxyBlockstore)(nil)
 // or more gateways that follow the [Trustless Gateway] specification.
 //
 // [Trustless Gateway]: https://specs.ipfs.tech/http-gateways/trustless-gateway/
-func NewProxyBlockstore(gatewayURL []string, cdns *CachedDNS) (blockstore.Blockstore, error) {
+func NewProxyBlockstore(gatewayURL []string, cdns *CachedDNS) (*proxyBlockstore, error) {
 	if len(gatewayURL) == 0 {
 		return nil, errors.New("missing gateway URLs to which to proxy")
 	}

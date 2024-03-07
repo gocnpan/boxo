@@ -33,10 +33,17 @@ jobs:
       - name: Build car-gateway
         run: go build -o car-gateway
         working-directory: boxo/examples/gateway/car
+      - name: Build proxy-gateway
+        run: go build -o proxy-gateway
+        working-directory: boxo/examples/gateway/proxy
 
       # 3. Start the car-gateway
       - name: Start car-gateway
-        run: boxo/examples/gateway/car/car-gateway -c fixtures/fixtures.car -p 8040 &
+        run: boxo/examples/gateway/car/car-gateway -c fixtures/fixtures.car -p 8030 &
+
+      # 3. Start the proxy-gateway
+      - name: Start proxy-gateway
+        run: boxo/examples/gateway/proxy/proxy-gateway -g http://127.0.0.1:8030 -p 8040 &
 
       # 4. Run the gateway-conformance tests
       - name: Run gateway-conformance tests

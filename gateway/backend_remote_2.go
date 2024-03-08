@@ -1108,7 +1108,7 @@ func (api *GraphGateway) GetCAR(ctx context.Context, p path.ImmutablePath, param
 			l := getLinksystem(teeBlock)
 
 			// First resolve the path since we always need to.
-			_, terminalCid, remainder, _, err := resolvePathWithRootsAndBlock(ctx, p, l)
+			_, terminalCid, remainder, terminalBlk, err := resolvePathWithRootsAndBlock(ctx, p, l)
 			if err != nil {
 				return err
 			}
@@ -1133,7 +1133,7 @@ func (api *GraphGateway) GetCAR(ctx context.Context, p path.ImmutablePath, param
 				blockBuffer = nil
 			}
 
-			err = walkGatewaySimpleSelector(ctx, terminalCid, remainder, params, l)
+			err = walkGatewaySimpleSelector2(ctx, terminalBlk, params.Scope, params.Range, l)
 			if err != nil {
 				return err
 			}

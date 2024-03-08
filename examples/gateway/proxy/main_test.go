@@ -9,9 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ipfs/boxo/blockservice"
 	"github.com/ipfs/boxo/examples/gateway/common"
-	"github.com/ipfs/boxo/exchange/offline"
 	"github.com/ipfs/boxo/gateway"
 	blocks "github.com/ipfs/go-block-format"
 	"github.com/stretchr/testify/assert"
@@ -25,10 +23,10 @@ const (
 func newProxyGateway(t *testing.T, rs *httptest.Server) *httptest.Server {
 	blockStore, err := gateway.NewProxyBlockstore([]string{rs.URL}, nil)
 	require.NoError(t, err)
-	blockService := blockservice.New(blockStore, offline.Exchange(blockStore))
+	// blockService := blockservice.New(blockStore, offline.Exchange(blockStore))
 	routing := newProxyRouting(rs.URL, nil)
 
-	backend, err := gateway.NewBlocksBackend(blockService, gateway.WithValueStore(routing))
+	backend, err := gateway.NewGraphGatewayBackend(blockStore, gateway.WithValueStore(routing))
 	require.NoError(t, err)
 
 	handler := common.NewHandler(backend)

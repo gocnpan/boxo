@@ -17,8 +17,8 @@ import (
 	"time"
 
 	"github.com/gocnpan/boxo/gateway/assets"
-	"github.com/gocnpan/boxo/ipns"
-	"github.com/gocnpan/boxo/path"
+	"github.com/ipfs/boxo/ipns"
+	"github.com/ipfs/boxo/path"
 	cid "github.com/ipfs/go-cid"
 	logging "github.com/ipfs/go-log/v2"
 	"github.com/juju/ratelimit"

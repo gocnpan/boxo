@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/gocnpan/boxo/path"
+	"github.com/ipfs/boxo/path"
 	redirects "github.com/ipfs/go-ipfs-redirects-file"
 	"go.uber.org/zap"
 )

@@ -52,7 +52,7 @@ func NewHandler(gwAPI gateway.IPFSBackend) http.Handler {
 		// Add an example menu item called 'Boxo', linking to our library.
 		Menu: []assets.MenuItem{
 			{
-				URL:   "https://github.com/gocnpan/boxo",
+				URL:   "https://github.com/ipfs/boxo",
 				Title: "Boxo",
 			},
 		},

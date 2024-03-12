@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	"github.com/cespare/xxhash/v2"
-	"github.com/gocnpan/boxo/path"
+	"github.com/ipfs/boxo/path"
 )
 
 //go:embed *.html *.css

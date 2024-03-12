@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/cespare/xxhash/v2"
-	"github.com/gocnpan/boxo/path"
+	"github.com/ipfs/boxo/path"
 	"github.com/ipfs/go-cid"
 
 	"go.opentelemetry.io/otel/attribute"

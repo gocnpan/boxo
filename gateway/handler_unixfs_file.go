@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/gabriel-vasile/mimetype"
-	"github.com/gocnpan/boxo/path"
+	"github.com/ipfs/boxo/path"
 	"github.com/juju/ratelimit"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"

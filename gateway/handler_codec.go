@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/gocnpan/boxo/gateway/assets"
-	"github.com/gocnpan/boxo/path"
+	"github.com/ipfs/boxo/path"
 	"github.com/ipfs/go-cid"
 	"github.com/ipld/go-ipld-prime/multicodec"
 	"github.com/ipld/go-ipld-prime/node/basicnode"

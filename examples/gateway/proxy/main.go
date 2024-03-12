@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/gocnpan/boxo/blockservice"
-	"github.com/gocnpan/boxo/blockstore"
-	"github.com/gocnpan/boxo/examples/gateway/common"
 	"github.com/gocnpan/boxo/gateway"
+	"github.com/ipfs/boxo/blockservice"
+	"github.com/ipfs/boxo/blockstore"
+	"github.com/ipfs/boxo/examples/gateway/common"
 	"github.com/ipfs/go-datastore"
 	dssync "github.com/ipfs/go-datastore/sync"
 )

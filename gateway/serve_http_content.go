@@ -101,7 +101,8 @@ func httpServeContent(w http.ResponseWriter, r *http.Request, modtime time.Time,
 	w.WriteHeader(code)
 
 	if r.Method != "HEAD" {
-		// 这里 配置 网关文件传输
+		// 这里 可以 配置 网关文件传输
+		// 上移到 gateway/handler_unixfs_file.go serveFile 方法配置 下载限速
 		var sendContent io.Reader = content
 		io.CopyN(w, sendContent, sendSize)
 	}

@@ -6,9 +6,11 @@ import (
 	"io"
 	"time"
 
+	"github.com/dustin/go-humanize"
 	"github.com/gocnpan/boxo/files"
 	"github.com/gocnpan/boxo/path"
 	"github.com/ipfs/go-cid"
+	"github.com/juju/ratelimit"
 	prometheus "github.com/prometheus/client_golang/prometheus"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
@@ -182,9 +184,18 @@ func (b *ipfsBackendWithMetrics) GetDNSLinkRecord(ctx context.Context, fqdn stri
 var _ IPFSBackend = (*ipfsBackendWithMetrics)(nil)
 
 func newHandlerWithMetrics(c *Config, backend IPFSBackend) *handler {
+	var s uint64
+	fileRL := c.FileRateLimitation
+	if c.FileRateLimitation == "" {
+		fileRL = "500 MB"
+	}
+	s, _ = humanize.ParseBytes(fileRL)
+
 	i := &handler{
 		config:  c,
 		backend: newIPFSBackendWithMetrics(backend),
+
+		fileRLBucket: ratelimit.NewBucketWithRate(float64(s), int64(s)),
 
 		// Response-type specific metrics
 		// ----------------------------

@@ -19,6 +19,9 @@ import (
 
 // Config is the configuration used when creating a new gateway handler.
 type Config struct {
+	// 文件下载 网速限制器 默认 500 MB
+	FileRateLimitation string `json:",omitempty"`
+
 	// Headers is a map containing all the headers that should be sent by default
 	// in all requests. You can define custom headers, as well as add the recommended
 	// headers via AddAccessControlHeaders.

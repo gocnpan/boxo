@@ -13,6 +13,7 @@ import (
 
 	"github.com/gabriel-vasile/mimetype"
 	"github.com/gocnpan/boxo/path"
+	"github.com/juju/ratelimit"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"
 )
@@ -84,7 +85,7 @@ func (i *handler) serveFile(ctx context.Context, w http.ResponseWriter, r *http.
 
 	// ServeContent will take care of
 	// If-None-Match+Etag, Content-Length and range requests
-	_, dataSent, _ := serveContent(w, r, modtime, fileSize, content)
+	_, dataSent, _ := serveContent(w, r, modtime, fileSize, ratelimit.Reader(content, i.fileRLBucket))
 
 	// Was response successful?
 	if dataSent {

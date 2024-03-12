@@ -21,6 +21,7 @@ import (
 	"github.com/gocnpan/boxo/path"
 	cid "github.com/ipfs/go-cid"
 	logging "github.com/ipfs/go-log/v2"
+	"github.com/juju/ratelimit"
 	"github.com/libp2p/go-libp2p/core/peer"
 	"github.com/multiformats/go-multibase"
 	mc "github.com/multiformats/go-multicodec"
@@ -68,6 +69,8 @@ type redirectTemplateData struct {
 type handler struct {
 	config  *Config
 	backend IPFSBackend
+
+	fileRLBucket *ratelimit.Bucket // 文件下载限速器
 
 	// response type metrics
 	requestTypeMetric            *prometheus.CounterVec

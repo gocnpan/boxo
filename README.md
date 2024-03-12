@@ -20,6 +20,13 @@
 
 <hr />
 
+## 修改说明
+当前项目仅对`gateway`包进行了修改, 增加了文件下载限速功能
+
+修改某个包时, 该包对`boxo`其他包的引用, 需要指向`github.com/ipfs/boxo`, 除非改包也做了修改
+
+而在`kubo`项目, 则仅限于修改了的包需要指向`github.com/gocnpan/boxo`, 其他包则需要指向`github.com/ipfs/boxo`, 避免冲突
+
 <!-- TOC -->
 
 - [About](#about)

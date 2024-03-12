@@ -1,1 +1,3 @@
 cmd/boxo-migrate/boxo-migrate
+
+vendor/

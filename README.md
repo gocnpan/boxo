@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="#readme"><img src="https://github.com/ipfs/boxo/assets/157609/3c5e7391-fbc2-405b-9efc-920f4fd13b39" alt="Boxo logo" title="Boxo logo" width="200"></a>
+  <a href="#readme"><img src="https://github.com/gocnpan/boxo/assets/157609/3c5e7391-fbc2-405b-9efc-920f4fd13b39" alt="Boxo logo" title="Boxo logo" width="200"></a>
   <br>
   BOXO: IPFS SDK for GO
   <br>
@@ -12,10 +12,10 @@
   <a href="https://ipfs.tech"><img src="https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square" alt="Official Part of IPFS Project"></a>
   <a href="https://discuss.ipfs.tech"><img alt="Discourse Forum" src="https://img.shields.io/discourse/posts?server=https%3A%2F%2Fdiscuss.ipfs.tech"></a>
   <a href="https://matrix.to/#/#ipfs-space:ipfs.io"><img alt="Matrix" src="https://img.shields.io/matrix/ipfs-space%3Aipfs.io?server_fqdn=matrix.org"></a>
-  <a href="https://github.com/ipfs/boxo/actions"><img src="https://img.shields.io/github/actions/workflow/status/ipfs/boxo/go-test.yml?branch=main" alt="ci"></a>
+  <a href="https://github.com/gocnpan/boxo/actions"><img src="https://img.shields.io/github/actions/workflow/status/ipfs/boxo/go-test.yml?branch=main" alt="ci"></a>
   <a href="https://codecov.io/gh/ipfs/boxo"><img src="https://codecov.io/gh/ipfs/boxo/branch/main/graph/badge.svg?token=9eG7d8fbCB" alt="coverage"></a>
-  <a href="https://github.com/ipfs/boxo/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/ipfs/boxo?filter=!*rc*"></a>
-  <a href="https://godoc.org/github.com/ipfs/boxo"><img src="https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square" alt="godoc reference"></a>  
+  <a href="https://github.com/gocnpan/boxo/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/ipfs/boxo?filter=!*rc*"></a>
+  <a href="https://godoc.org/github.com/gocnpan/boxo"><img src="https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square" alt="godoc reference"></a>  
 </p>
 
 <hr />
@@ -108,9 +108,9 @@ If you are migrating to Boxo, see [Migrating to Boxo](#migrating-to-boxo).
 Many Go modules under github.com/ipfs have moved here. Boxo provides a tool to ease this migration, which does most of the work for you:
 
 * `cd` into the root directory of your module (where the `go.mod` file is)
-* Run: `go run github.com/ipfs/boxo/cmd/boxo-migrate@latest update-imports`
+* Run: `go run github.com/gocnpan/boxo/cmd/boxo-migrate@latest update-imports`
   * This will upgrade your module to Boxo v0.8.0 and rewrite your import paths
-* Run: `go run github.com/ipfs/boxo/cmd/boxo-migrate@latest check-dependencies`
+* Run: `go run github.com/gocnpan/boxo/cmd/boxo-migrate@latest check-dependencies`
   * This will print unmaintained dependencies you still have
   * These aren't necessarily an immediate problem, but you should eventually get them out of your dependency graph
   
@@ -118,7 +118,7 @@ This tool only upgrades your module to Boxo v0.8.0, to minimize backwards-incomp
 
 We recommend upgrading to v0.8.0 first, and _then_ upgrading to the latest Boxo release.
 
-If you encounter any challenges, please [open an issue](https://github.com/ipfs/boxo/issues/new/choose) and Boxo maintainers will help you.
+If you encounter any challenges, please [open an issue](https://github.com/gocnpan/boxo/issues/new/choose) and Boxo maintainers will help you.
 
 ### Deprecations & Breaking Changes
 
@@ -164,7 +164,7 @@ New issues and PRs to this repo are usually looked at on a weekly basis as part 
 
 ### What are some projects that depend on this project?
 
-The exhaustive list is https://github.com/ipfs/boxo/network/dependents. Some notable projects include:
+The exhaustive list is https://github.com/gocnpan/boxo/network/dependents. Some notable projects include:
 
 1. [Kubo](https://github.com/ipfs/kubo), an IPFS implementation in Go
 2. [Lotus](https://github.com/filecoin-project/lotus), a Filecoin implementation in Go
@@ -179,11 +179,11 @@ See [CODEOWNERS](./docs/CODEOWNERS) for the current maintainers list. Governance
 
 ### Why is this named "Boxo"?
 
-See https://github.com/ipfs/boxo/issues/215. 
+See https://github.com/gocnpan/boxo/issues/215. 
 
 ### Additional Docs & FAQs
 
-See [the wiki](https://github.com/ipfs/boxo/wiki).
+See [the wiki](https://github.com/gocnpan/boxo/wiki).
 
 ### License
 

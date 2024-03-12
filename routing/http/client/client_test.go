@@ -12,11 +12,11 @@ import (
 	"time"
 
 	"github.com/benbjohnson/clock"
-	ipns "github.com/ipfs/boxo/ipns"
-	"github.com/ipfs/boxo/path"
-	"github.com/ipfs/boxo/routing/http/server"
-	"github.com/ipfs/boxo/routing/http/types"
-	"github.com/ipfs/boxo/routing/http/types/iter"
+	ipns "github.com/gocnpan/boxo/ipns"
+	"github.com/gocnpan/boxo/path"
+	"github.com/gocnpan/boxo/routing/http/server"
+	"github.com/gocnpan/boxo/routing/http/types"
+	"github.com/gocnpan/boxo/routing/http/types/iter"
 	"github.com/ipfs/go-cid"
 
 	"github.com/libp2p/go-libp2p/core/crypto"

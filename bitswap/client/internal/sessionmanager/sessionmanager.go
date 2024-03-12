@@ -11,12 +11,12 @@ import (
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"
 
-	"github.com/ipfs/boxo/bitswap/client/internal"
-	bsbpm "github.com/ipfs/boxo/bitswap/client/internal/blockpresencemanager"
-	notifications "github.com/ipfs/boxo/bitswap/client/internal/notifications"
-	bssession "github.com/ipfs/boxo/bitswap/client/internal/session"
-	bssim "github.com/ipfs/boxo/bitswap/client/internal/sessioninterestmanager"
-	exchange "github.com/ipfs/boxo/exchange"
+	"github.com/gocnpan/boxo/bitswap/client/internal"
+	bsbpm "github.com/gocnpan/boxo/bitswap/client/internal/blockpresencemanager"
+	notifications "github.com/gocnpan/boxo/bitswap/client/internal/notifications"
+	bssession "github.com/gocnpan/boxo/bitswap/client/internal/session"
+	bssim "github.com/gocnpan/boxo/bitswap/client/internal/sessioninterestmanager"
+	exchange "github.com/gocnpan/boxo/exchange"
 	peer "github.com/libp2p/go-libp2p/core/peer"
 )
 

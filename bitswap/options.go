@@ -3,9 +3,9 @@ package bitswap
 import (
 	"time"
 
-	"github.com/ipfs/boxo/bitswap/client"
-	"github.com/ipfs/boxo/bitswap/server"
-	"github.com/ipfs/boxo/bitswap/tracer"
+	"github.com/gocnpan/boxo/bitswap/client"
+	"github.com/gocnpan/boxo/bitswap/server"
+	"github.com/gocnpan/boxo/bitswap/tracer"
 	delay "github.com/ipfs/go-ipfs-delay"
 )
 

@@ -6,14 +6,14 @@ import (
 	"io"
 	"os"
 
-	dag "github.com/ipfs/boxo/ipld/merkledag"
+	dag "github.com/gocnpan/boxo/ipld/merkledag"
 
-	ft "github.com/ipfs/boxo/ipld/unixfs"
-	pb "github.com/ipfs/boxo/ipld/unixfs/pb"
+	ft "github.com/gocnpan/boxo/ipld/unixfs"
+	pb "github.com/gocnpan/boxo/ipld/unixfs/pb"
 
-	chunker "github.com/ipfs/boxo/chunker"
-	"github.com/ipfs/boxo/files"
-	pi "github.com/ipfs/boxo/filestore/posinfo"
+	chunker "github.com/gocnpan/boxo/chunker"
+	"github.com/gocnpan/boxo/files"
+	pi "github.com/gocnpan/boxo/filestore/posinfo"
 	cid "github.com/ipfs/go-cid"
 	ipld "github.com/ipfs/go-ipld-format"
 )

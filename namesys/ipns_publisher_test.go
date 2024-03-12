@@ -6,12 +6,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ipfs/boxo/path"
+	"github.com/gocnpan/boxo/path"
 	"github.com/stretchr/testify/require"
 
-	dshelp "github.com/ipfs/boxo/datastore/dshelp"
-	"github.com/ipfs/boxo/ipns"
-	mockrouting "github.com/ipfs/boxo/routing/mock"
+	dshelp "github.com/gocnpan/boxo/datastore/dshelp"
+	"github.com/gocnpan/boxo/ipns"
+	mockrouting "github.com/gocnpan/boxo/routing/mock"
 	ds "github.com/ipfs/go-datastore"
 	dssync "github.com/ipfs/go-datastore/sync"
 	testutil "github.com/libp2p/go-libp2p-testing/net"

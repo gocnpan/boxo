@@ -3,10 +3,10 @@ package provider
 import (
 	"context"
 
-	blocks "github.com/ipfs/boxo/blockstore"
-	"github.com/ipfs/boxo/fetcher"
-	fetcherhelpers "github.com/ipfs/boxo/fetcher/helpers"
-	pin "github.com/ipfs/boxo/pinning/pinner"
+	blocks "github.com/gocnpan/boxo/blockstore"
+	"github.com/gocnpan/boxo/fetcher"
+	fetcherhelpers "github.com/gocnpan/boxo/fetcher/helpers"
+	pin "github.com/gocnpan/boxo/pinning/pinner"
 	"github.com/ipfs/go-cid"
 	"github.com/ipfs/go-cidutil"
 	logging "github.com/ipfs/go-log/v2"

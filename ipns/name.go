@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ipfs/boxo/path"
+	"github.com/gocnpan/boxo/path"
 	"github.com/ipfs/go-cid"
 	"github.com/libp2p/go-libp2p/core/peer"
 	mb "github.com/multiformats/go-multibase"

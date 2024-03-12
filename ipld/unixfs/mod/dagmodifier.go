@@ -8,13 +8,13 @@ import (
 	"errors"
 	"io"
 
-	ft "github.com/ipfs/boxo/ipld/unixfs"
-	help "github.com/ipfs/boxo/ipld/unixfs/importer/helpers"
-	trickle "github.com/ipfs/boxo/ipld/unixfs/importer/trickle"
-	uio "github.com/ipfs/boxo/ipld/unixfs/io"
+	ft "github.com/gocnpan/boxo/ipld/unixfs"
+	help "github.com/gocnpan/boxo/ipld/unixfs/importer/helpers"
+	trickle "github.com/gocnpan/boxo/ipld/unixfs/importer/trickle"
+	uio "github.com/gocnpan/boxo/ipld/unixfs/io"
 
-	chunker "github.com/ipfs/boxo/chunker"
-	mdag "github.com/ipfs/boxo/ipld/merkledag"
+	chunker "github.com/gocnpan/boxo/chunker"
+	mdag "github.com/gocnpan/boxo/ipld/merkledag"
 	cid "github.com/ipfs/go-cid"
 	ipld "github.com/ipfs/go-ipld-format"
 )

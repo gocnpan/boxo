@@ -10,9 +10,9 @@ import (
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"
 
-	"github.com/ipfs/boxo/fetcher"
-	fetcherhelpers "github.com/ipfs/boxo/fetcher/helpers"
-	"github.com/ipfs/boxo/path"
+	"github.com/gocnpan/boxo/fetcher"
+	fetcherhelpers "github.com/gocnpan/boxo/fetcher/helpers"
+	"github.com/gocnpan/boxo/path"
 	cid "github.com/ipfs/go-cid"
 	logging "github.com/ipfs/go-log/v2"
 	"github.com/ipld/go-ipld-prime"

@@ -11,9 +11,9 @@ import (
 	"time"
 
 	"github.com/dustin/go-humanize"
-	"github.com/ipfs/boxo/files"
-	"github.com/ipfs/boxo/gateway/assets"
-	"github.com/ipfs/boxo/path"
+	"github.com/gocnpan/boxo/files"
+	"github.com/gocnpan/boxo/gateway/assets"
+	"github.com/gocnpan/boxo/path"
 	cid "github.com/ipfs/go-cid"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"

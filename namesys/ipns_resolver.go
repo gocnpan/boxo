@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ipfs/boxo/ipns"
-	"github.com/ipfs/boxo/path"
+	"github.com/gocnpan/boxo/ipns"
+	"github.com/gocnpan/boxo/path"
 
 	dht "github.com/libp2p/go-libp2p-kad-dht"
 	"github.com/libp2p/go-libp2p/core/routing"

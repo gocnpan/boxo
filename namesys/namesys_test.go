@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ipfs/boxo/ipns"
-	"github.com/ipfs/boxo/path"
-	offroute "github.com/ipfs/boxo/routing/offline"
+	"github.com/gocnpan/boxo/ipns"
+	"github.com/gocnpan/boxo/path"
+	offroute "github.com/gocnpan/boxo/routing/offline"
 	ds "github.com/ipfs/go-datastore"
 	dssync "github.com/ipfs/go-datastore/sync"
 	record "github.com/libp2p/go-libp2p-record"

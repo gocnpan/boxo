@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/ipfs/boxo/blockservice"
-	"github.com/ipfs/boxo/fetcher"
+	"github.com/gocnpan/boxo/blockservice"
+	"github.com/gocnpan/boxo/fetcher"
 	"github.com/ipld/go-ipld-prime"
 	cidlink "github.com/ipld/go-ipld-prime/linking/cid"
 	basicnode "github.com/ipld/go-ipld-prime/node/basic"

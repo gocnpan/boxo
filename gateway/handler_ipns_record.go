@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/cespare/xxhash/v2"
-	"github.com/ipfs/boxo/ipns"
-	"github.com/ipfs/boxo/path"
+	"github.com/gocnpan/boxo/ipns"
+	"github.com/gocnpan/boxo/path"
 	"github.com/ipfs/go-cid"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"

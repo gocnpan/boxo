@@ -101,6 +101,7 @@ func httpServeContent(w http.ResponseWriter, r *http.Request, modtime time.Time,
 	w.WriteHeader(code)
 
 	if r.Method != "HEAD" {
+		// 这里 配置 网关文件传输
 		var sendContent io.Reader = content
 		io.CopyN(w, sendContent, sendSize)
 	}

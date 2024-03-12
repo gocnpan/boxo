@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ipfs/boxo/path"
+	"github.com/gocnpan/boxo/path"
 	cid "github.com/ipfs/go-cid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

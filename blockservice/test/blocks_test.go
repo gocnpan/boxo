@@ -7,11 +7,11 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/ipfs/boxo/blockservice"
+	. "github.com/gocnpan/boxo/blockservice"
 
-	blockstore "github.com/ipfs/boxo/blockstore"
-	offline "github.com/ipfs/boxo/exchange/offline"
-	u "github.com/ipfs/boxo/util"
+	blockstore "github.com/gocnpan/boxo/blockstore"
+	offline "github.com/gocnpan/boxo/exchange/offline"
+	u "github.com/gocnpan/boxo/util"
 	blocks "github.com/ipfs/go-block-format"
 	cid "github.com/ipfs/go-cid"
 	ds "github.com/ipfs/go-datastore"

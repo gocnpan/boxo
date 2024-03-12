@@ -10,10 +10,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/ipfs/boxo/ipns"
-	"github.com/ipfs/boxo/routing/http/client"
-	"github.com/ipfs/boxo/routing/http/types"
-	"github.com/ipfs/boxo/routing/http/types/iter"
+	"github.com/gocnpan/boxo/ipns"
+	"github.com/gocnpan/boxo/routing/http/client"
+	"github.com/gocnpan/boxo/routing/http/types"
+	"github.com/gocnpan/boxo/routing/http/types/iter"
 	"github.com/ipfs/go-cid"
 	"github.com/libp2p/go-libp2p/core/peer"
 )

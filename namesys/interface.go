@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ipfs/boxo/ipns"
-	"github.com/ipfs/boxo/path"
+	"github.com/gocnpan/boxo/ipns"
+	"github.com/gocnpan/boxo/path"
 	logging "github.com/ipfs/go-log/v2"
 	ci "github.com/libp2p/go-libp2p/core/crypto"
 )

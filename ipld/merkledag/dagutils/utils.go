@@ -5,14 +5,14 @@ import (
 	"errors"
 	"strings"
 
-	bserv "github.com/ipfs/boxo/blockservice"
-	bstore "github.com/ipfs/boxo/blockstore"
-	offline "github.com/ipfs/boxo/exchange/offline"
+	bserv "github.com/gocnpan/boxo/blockservice"
+	bstore "github.com/gocnpan/boxo/blockstore"
+	offline "github.com/gocnpan/boxo/exchange/offline"
 	ds "github.com/ipfs/go-datastore"
 	syncds "github.com/ipfs/go-datastore/sync"
 	ipld "github.com/ipfs/go-ipld-format"
 
-	dag "github.com/ipfs/boxo/ipld/merkledag"
+	dag "github.com/gocnpan/boxo/ipld/merkledag"
 )
 
 // Editor represents a ProtoNode tree editor and provides methods to

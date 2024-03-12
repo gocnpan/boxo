@@ -11,8 +11,8 @@ The examples are designed to give users a starting point to create certain thing
 If you want to copy of the examples out of Boxo in order to use it in your own product, you need to remove the replacement directive and ensure you're using the latest Boxo version:
 
 ```bash
-> go mod edit -dropreplace=github.com/ipfs/boxo
-> go get github.com/ipfs/boxo@latest
+> go mod edit -dropreplace=github.com/gocnpan/boxo
+> go get github.com/gocnpan/boxo@latest
 > go mod tidy
 ```
 

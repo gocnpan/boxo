@@ -9,9 +9,9 @@ import (
 	"sync"
 	"time"
 
-	dag "github.com/ipfs/boxo/ipld/merkledag"
-	ft "github.com/ipfs/boxo/ipld/unixfs"
-	uio "github.com/ipfs/boxo/ipld/unixfs/io"
+	dag "github.com/gocnpan/boxo/ipld/merkledag"
+	ft "github.com/gocnpan/boxo/ipld/unixfs"
+	uio "github.com/gocnpan/boxo/ipld/unixfs/io"
 
 	cid "github.com/ipfs/go-cid"
 	ipld "github.com/ipfs/go-ipld-format"

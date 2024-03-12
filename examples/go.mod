@@ -1,9 +1,9 @@
-module github.com/ipfs/boxo/examples
+module github.com/gocnpan/boxo/examples
 
 go 1.20
 
 require (
-	github.com/ipfs/boxo v0.13.1
+	github.com/gocnpan/boxo v0.13.1
 	github.com/ipfs/go-block-format v0.1.2
 	github.com/ipfs/go-cid v0.4.1
 	github.com/ipfs/go-datastore v0.6.0
@@ -169,4 +169,4 @@ require (
 	lukechampine.com/blake3 v1.2.1 // indirect
 )
 
-replace github.com/ipfs/boxo => ../
+replace github.com/gocnpan/boxo => ../

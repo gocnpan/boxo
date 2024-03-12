@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	path "github.com/ipfs/boxo/path"
+	path "github.com/gocnpan/boxo/path"
 	"github.com/ipfs/go-cid"
 	dns "github.com/miekg/dns"
 	"github.com/samber/lo"

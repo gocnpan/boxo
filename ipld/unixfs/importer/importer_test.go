@@ -6,11 +6,11 @@ import (
 	"io"
 	"testing"
 
-	uio "github.com/ipfs/boxo/ipld/unixfs/io"
+	uio "github.com/gocnpan/boxo/ipld/unixfs/io"
 
-	chunker "github.com/ipfs/boxo/chunker"
-	mdtest "github.com/ipfs/boxo/ipld/merkledag/test"
-	u "github.com/ipfs/boxo/util"
+	chunker "github.com/gocnpan/boxo/chunker"
+	mdtest "github.com/gocnpan/boxo/ipld/merkledag/test"
+	u "github.com/gocnpan/boxo/util"
 	cid "github.com/ipfs/go-cid"
 	ipld "github.com/ipfs/go-ipld-format"
 )
